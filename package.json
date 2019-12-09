@@ -1,0 +1,29 @@
+{
+  "name": "web-lullaby",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gen-key-cert": "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem",
+    "gen-proxy-key-cert": "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout ./roundware-proxy/proxy-key.pem -out ./roundware-proxy/proxy-cert.pem",
+    "dev": "http-server -S -C cert.pem -a localhost -p 8080",
+    "prod": "http-server -S -C cert.pem -a localhost -p 8090",
+    "roundware-proxy": "node ./roundware-proxy/proxy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thoughtworksarts/web-lullaby.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thoughtworksarts/web-lullaby/issues"
+  },
+  "homepage": "https://github.com/thoughtworksarts/web-lullaby#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "http-proxy": "^1.17.0"
+  }
+}

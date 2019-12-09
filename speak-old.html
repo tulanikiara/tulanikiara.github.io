@@ -1,0 +1,501 @@
+<!DOCTYPE HTML>
+<!--
+	Slate by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+-->
+<html>
+	<head>
+		<title>A Father's Lullaby - About</title>
+		<meta property="og:url"           content="https://fatherslullaby.org/about.html" >
+		<meta property="og:type"          content="website" >
+		<meta property="og:title"         content="A Father's Lullaby" >
+		<meta property="og:description"   content="Incarcerated fathers can't sing lullabies at bedtime." >
+		<meta property="og:image"         content="https://fatherslullaby.org/images/title-logo.png" >
+		<meta property="fb:app_id"        content="" >
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://use.typekit.net/xxd2frq.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/lullaby.css" />
+		<link rel="stylesheet" href="web-recorder/css/speak.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" type="image/ico" href="images/fl-favicon.png"/>
+		<script type='application/javascript' src='assets/js/fastclick.js'></script>
+		<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="">
+				<a id="header-logo" href="#"><img src="images/header-logo.png" style="width: inherit;"></a>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">About</a></li>
+						<!-- <li><a href="listen.html">Listen</a></li> -->
+						<li class="selected"><a href="#">Share a Lullaby</a></li>
+						<li><a href="map.html">Listen to Others</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<article>
+					<img src="#" alt="" />
+					<div class="inner">
+						<div class="page"><span>Share a Lullaby</span></div>
+						<div id="title"></div>
+						<hr>
+						<div id="step-1">
+							<div class="step-header">
+								<div class="step-number">1</div>
+								<div class="step-copy"><h3>From what perspective are you speaking?</h3></div>
+							</div>
+							<div id="step-tags"></div>
+							<div class="step-header">
+								<div class="step-number">2</div>
+								<div class="step-copy"><h3>Select a location for your story.</h3></div>
+							</div>
+							<input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+							<div id="map"></div>
+							<div class="buttonWrapper" style="" id="tags-next-wrapper">
+								<a type="button" id="tags-next" class="button next" value="Next">Next</a>
+							</div>
+						</div>
+
+						<div id="step-2">
+							<div class="step-header">
+								<div class="step-number">3</div>
+								<div class="step-copy"><h3>Please select a question to which to respond:</h3></div>
+							</div>
+							<div id="step-question-tags"></div>
+							<div id="controls">
+								<div id="re-record-wrapper" style="display: none;">
+									<img id="re-record" src="web-recorder/images/re-record.png" alt="re-record">
+									<p>Re-record</p>
+								</div>
+								<img id="record" src="web-recorder/images/record.png" alt="record">
+								<div id="upload-wrapper" style="display: none;">
+									<img id="upload" src="web-recorder/images/upload.png" alt="upload" style="display: inherit;">
+									<p>Upload</p>
+									<div id="upload-spinner" class="loading" style="display: none;"></div>
+								</div>
+							</div>
+							<div id="timer" style="visibility: hidden;"></div>
+                            <div id="viz">
+								<canvas id="analyser"></canvas>
+								<canvas id="wavedisplay"></canvas>
+							</div>
+							<div class="buttonWrapper" style="" id="rec-prev-wrapper">
+								<a type="button" id="rec-prev" class="button prev" value="Next">Previous</a>
+							</div>
+						</div>
+					</div>
+				</article>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="menu">
+						<li><a href="https://www.boston.gov/departments/boston-centers-youth-families"><img src="images/bcyf.png" ></a></li>
+						<li><a href="https://www.boston.gov/departments/arts-and-culture/boston-artists-residence-air"><img src="images/bostonair.png" ></a></li>
+						<li><img src="images/insight.png" ></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--<script src="assets/js/alertify.js"></script>-->
+			<script src="assets/js/bowser.min.js"></script>
+			<script src="assets/js/main.js"></script>
+
+		<!-- Web Recorder scripts -->
+			<script src="web-recorder/js/audiodisplay.js"></script>
+			<script src="web-recorder/js/roundwareRecorder.js"></script>
+			<script src="web-recorder/js/roundwareWorkflow.js"></script>
+			<script src="web-recorder/js/recorder.js"></script>
+
+			<script>
+
+				// first, some browser compatibility testing
+
+			    // first check if iOS to display message and redirect
+			    var isiOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+			    console.log("ios = " + isiOS);
+			    var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
+			    console.log("android = " + isAndroid);
+			  	var isChrome = navigator.userAgent.indexOf("Chrome") != -1;
+				if (isChrome) {console.log("Chrome browser detected!");}
+				var isFirefox = typeof InstallTrigger !== 'undefined';
+				if (isFirefox) {console.log("Firefox browser detected!");}
+
+				// first test if iOS device
+			    if (isiOS) {
+			    	alertify
+						.okBtn("Listen")
+	                    .alert('Audio recording is not available in mobile Safari, unfortunately. <br><br>'
+	                    	 + 'Please use a desktop browser to record your lullaby. Thank you!<br><br>'
+							 + 'You can still listen on your iOS device, so please check that out.', function () {
+                                window.location.replace("map.html");
+					    });
+			    }
+
+			    // then test if Android device
+			    else if (isAndroid) {
+			    	alertify
+						.okBtn("Listen")
+	                    .alert('Audio recording is not available on Android browsers, unfortunately. <br><br>'
+	                    	 + 'Please use a desktop browser to record your lullaby. Thank you!<br><br>'
+	                    	 + 'You can still listen on your Android device, so please check that out.', function () {
+                                window.location.replace("map.html");
+                        });
+			    }
+
+			    // and finally test what desktop browser is being used
+				else if (!isChrome && !isFirefox) {
+					alertify
+						.okBtn("OK")
+	                    .alert('Audio recording through the browser is only available and tested on Chrome and Firefox. <br><br>'
+	                    	 + 'It appears that you are not using either of these browsers, so recording will likely not work, but you can still listen. <br><br>'
+	                    	 + 'For the best experience of <em>A Father\'s Lullaby</em>, please use Chrome or download the free iOS app.', function () {
+                                window.location.replace("map.html");
+                        });
+				}
+
+				var rww = new RoundWare.Workflow(25);
+				var marker = undefined;
+
+				function initMap() {
+				    var map = new google.maps.Map(document.getElementById('map'), {
+				      center: {lat: 42.352546, lng: -71.057833},
+				      zoom: 12,
+					  styles: [
+						  {
+							  "featureType": "administrative",
+							  "elementType": "all",
+							  "stylers": [
+								  {
+									  "hue": "#000000"
+								  },
+								  {
+									  "lightness": -100
+								  },
+								  {
+									  "visibility": "off"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "landscape",
+							  "elementType": "geometry",
+							  "stylers": [
+								  {
+									  "visibility": "on"
+								  },
+								  {
+									  "saturation": "-52"
+								  },
+								  {
+									  "lightness": "-22"
+								  },
+								  {
+									  "gamma": "1.52"
+								  },
+								  {
+									  "hue": "#ff000c"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "landscape",
+							  "elementType": "labels",
+							  "stylers": [
+								  {
+									  "hue": "#000000"
+								  },
+								  {
+									  "saturation": -100
+								  },
+								  {
+									  "lightness": -100
+								  },
+								  {
+									  "visibility": "off"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "poi",
+							  "elementType": "all",
+							  "stylers": [
+								  {
+									  "hue": "#000000"
+								  },
+								  {
+									  "saturation": -100
+								  },
+								  {
+									  "lightness": -100
+								  },
+								  {
+									  "visibility": "off"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "road",
+							  "elementType": "geometry",
+							  "stylers": [
+								  {
+									  "hue": "#bbbbbb"
+								  },
+								  {
+									  "saturation": -100
+								  },
+								  {
+									  "lightness": 26
+								  },
+								  {
+									  "visibility": "on"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "road",
+							  "elementType": "labels",
+							  "stylers": [
+								  {
+									  "hue": "#ffffff"
+								  },
+								  {
+									  "saturation": -100
+								  },
+								  {
+									  "lightness": 100
+								  },
+								  {
+									  "visibility": "off"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "road.highway",
+							  "elementType": "geometry",
+							  "stylers": [
+								  {
+									  "lightness": "-19"
+								  },
+								  {
+									  "saturation": "-35"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "road.arterial",
+							  "elementType": "geometry",
+							  "stylers": [
+								  {
+									  "visibility": "on"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "road.arterial",
+							  "elementType": "geometry.fill",
+							  "stylers": [
+								  {
+									  "color": "#faf7f7"
+								  },
+								  {
+									  "visibility": "on"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "road.arterial",
+							  "elementType": "geometry.stroke",
+							  "stylers": [
+								  {
+									  "color": "#e75b5b"
+								  },
+								  {
+									  "weight": "1.19"
+								  },
+								  {
+									  "visibility": "on"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "road.arterial",
+							  "elementType": "labels.text",
+							  "stylers": [
+								  {
+									  "visibility": "off"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "road.local",
+							  "elementType": "all",
+							  "stylers": [
+								  {
+									  "hue": "#ffffff"
+								  },
+								  {
+									  "saturation": -100
+								  },
+								  {
+									  "lightness": 100
+								  },
+								  {
+									  "visibility": "on"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "road.local",
+							  "elementType": "geometry",
+							  "stylers": [
+								  {
+									  "visibility": "on"
+								  },
+								  {
+									  "lightness": "4"
+								  },
+								  {
+									  "color": "#bba6aa"
+								  },
+								  {
+									  "saturation": "-30"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "road.local",
+							  "elementType": "labels.text",
+							  "stylers": [
+								  {
+									  "visibility": "off"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "transit",
+							  "elementType": "labels",
+							  "stylers": [
+								  {
+									  "hue": "#000000"
+								  },
+								  {
+									  "lightness": -100
+								  },
+								  {
+									  "visibility": "off"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "water",
+							  "elementType": "geometry",
+							  "stylers": [
+								  {
+									  "hue": "#ffffff"
+								  },
+								  {
+									  "saturation": -100
+								  },
+								  {
+									  "lightness": 100
+								  },
+								  {
+									  "visibility": "on"
+								  }
+							  ]
+						  },
+						  {
+							  "featureType": "water",
+							  "elementType": "labels",
+							  "stylers": [
+								  {
+									  "hue": "#000000"
+								  },
+								  {
+									  "saturation": -100
+								  },
+								  {
+									  "lightness": -100
+								  },
+								  {
+									  "visibility": "off"
+								  }
+							  ]
+						  }
+					  ]
+				    });
+				    var input = document.getElementById('pac-input');
+
+				    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+				    var autocomplete = new google.maps.places.Autocomplete(input);
+				    autocomplete.bindTo('bounds', map);
+
+
+				    autocomplete.addListener('place_changed', function() {
+				        marker = new google.maps.Marker({
+				            map: map,
+				            anchorPoint: new google.maps.Point(0, -29),
+				            draggable: true
+				        });
+
+
+				        marker.setVisible(false);
+				        var place = autocomplete.getPlace();
+				        if (!place.geometry) {
+				            // User entered the name of a Place that was not suggested and
+				            // pressed the Enter key, or the Place Details request failed.
+				            window.alert("No details available for input: '" + place.name + "'");
+				            return;
+				        }
+
+				        // If the place has a geometry, then present it on a map.
+				        if (place.geometry.viewport) {
+				            map.fitBounds(place.geometry.viewport);
+							map.setCenter(place.geometry.location);
+							map.setZoom(15);
+				        } else {
+				            map.setCenter(place.geometry.location);
+				            map.setZoom(10);
+				        }
+				        marker.setIcon({
+				            url: place.icon,
+				            size: new google.maps.Size(71, 71),
+				            origin: new google.maps.Point(0, 0),
+				            anchor: new google.maps.Point(17, 34),
+				            scaledSize: new google.maps.Size(35, 35)
+				        });
+				        marker.setPosition(place.geometry.location);
+				        marker.setVisible(true);
+
+				        rww.setMarker(marker);
+				        $('input.tag').trigger('change');
+
+				    });
+
+				}
+				$(function() {
+				    FastClick.attach(document.body);
+				});
+
+			</script>
+			<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyC98DhVZ3upWTxIIE257aOy9S6xcmcHAbs&callback=initMap&libraries=places"></script>
+	</body>
+</html>
