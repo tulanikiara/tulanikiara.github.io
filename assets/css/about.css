@@ -1,0 +1,136 @@
+/*
+	Custom styles for fatherslullaby.org
+	Halsey Burgund
+*/
+
+#banner > article .inner {
+    width: 75%;
+}
+#banner {
+    height: 100vh;
+}
+#banner > article {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner .page{
+    text-align: start;
+}
+
+#about p {
+	font-size: 1.1em;
+}
+#about-text {
+  width: 60%;
+    text-align: justify;
+    display: inline-block;
+	color:#332031;
+    font-family: "serenity";
+    font-size: 1.4em;
+    line-height: 1.5em;
+    margin-top: 20px;
+}
+
+button {
+    flex: auto;
+    flex-basis: 200px;
+    flex-direction: row;
+    width: 9em;
+    height: auto;
+    margin: 5px 15px 5px 15px;
+    background-color: #52314e;
+    color:#b360aa;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.7em;
+    text-transform: none;
+}
+
+button:hover {
+    color: #52314e;
+}
+
+#about-text .about-text {
+  margin: 0 0 10px 0;
+}
+
+/* RESPONSIVENESS */
+
+@media screen and (max-width: 1280px) {
+  .main-title {
+    font-size: 2.5em;
+  }
+
+}
+
+@media screen and (max-width: 980px) {
+  .main-title {
+    font-size: 2.5em;
+  }
+
+	#banner {
+	    min-height: 44em;
+	}
+    #about-text {
+    	width: auto;
+    }
+}
+
+@media screen and (max-width: 736px) {
+  .main-title {
+    font-size: 2em;
+  }
+
+  button {
+    font-size: 1.2em;
+    width: 7em;
+  }
+
+    #banner {
+	    min-height: 54em;
+	}
+    #banner > article .inner {
+        width: 90%;
+    }
+    #about-text {
+    	width: auto;
+      font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+  #footer {
+    position: relative;
+  }
+
+  #banner {
+    height: auto;
+  }
+
+  #banner > article {
+    padding-top: calc(1.5 * 5em);
+    align-items: flex-start;
+  }
+
+  .main-title {
+    font-size: 1.7em;
+  }
+
+  button {
+    font-size: 1.2em;
+    width: 7em;
+  }
+
+	#banner {
+	    min-height: 52em;
+	}
+    #banner > article .inner {
+        width: 90%;
+    }
+    #about-text {
+    	width: auto;
+    }
+}
