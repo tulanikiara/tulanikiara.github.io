@@ -66,16 +66,16 @@ Btn.onclick = function() {
             
             </section>-->
             <script>
-            document.getElementById("s").innerHTML = "Sounds: " + getCookie("sound");
-            document.getElementById("m").innerHTML = "Reminders: " + getCookie("memory");
-            document.getElementById("f").innerHTML = "Feeling: " + getCookie("feel");
+            var so = "Sounds: " + document.getElementById("s").innerHTML.value;
+            var me = "Reminders: " + document.getElementById("m").innerHTML.value ;
+           var fe = "Feelings: " + document.getElementById("f").innerHTML.value ;
             </script>
             
             <!-- Banner -->
             <section id="banner">
                 <article>
                     <div class="inner">
-                       <div class="main-title">
+                       <div class="about-text">
                           <!--   How closely <span id="highlight">are you listening</span> to the world around you?</span>
                         </div><button onClick="parent.location='map.html'">Listen</button><div id="about-text">
                             <p class="about-text">Promenade is a new way to experience how others experience and interpret sound. People often go through their days hearing sounds, but not actively listening.</p>
