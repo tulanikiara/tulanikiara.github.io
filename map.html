@@ -81,7 +81,8 @@
 					Your browser does not support the audio format.
 				</audio>
 			</section>
-
+			<!--listen button hopefully-->
+			<button onClick="parent.location='speak.html'">Speak</button>
 		<!-- Tag Filters -->
 			<section id="filters" class="wrapper ">
 				<div class="inner">
@@ -268,7 +269,7 @@
 						        "elementType": "geometry.stroke",
 						        "stylers": [
 						            {
-						                "color": "#e75b5b"
+						                "color": "#9e6d9b"
 						            },
 						            {
 						                "weight": "1.19"
@@ -316,7 +317,7 @@
 						                "lightness": "4"
 						            },
 						            {
-						                "color": "#bba6aa"
+						                "color": "#3e8486"
 						            },
 						            {
 						                "saturation": "-30"
@@ -398,7 +399,7 @@
 							new google.maps.LatLng(42.408693, -70.912608)
 						);
 
-						var srcImage = 'images/overlay2.png';
+						var srcImage = 'null';
 						// The custom overlay object contains the image,
 						// the bounds of the image, and a reference to the map.
 						overlay = new artOverlay(bounds, srcImage, map);
