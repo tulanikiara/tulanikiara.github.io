@@ -121,7 +121,7 @@ function initRecording() {
     }).get().join();
     var radionbutn_clicked = JSON.stringify(speakTagIds);
     var counts = radionbutn_clicked.split(",");
-    if( counts.length == 3 )
+    if( counts.length == 2 )
     {
       console.log("Verified the radio buttons were clicked.")
       return true;
