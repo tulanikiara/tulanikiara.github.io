@@ -119,7 +119,7 @@ Btn.onclick = function() {
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   var expires = "expires="+d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}*/
+}
 function storeValue(form){
    setCookie("sound", form[0].nameBox.value);
    setCookie("memory", form[1].nameBox.value);
@@ -139,7 +139,7 @@ function getCookie(cname) {
     }
   }
   return "";
-}
+}*/
 
                 </script>
     
