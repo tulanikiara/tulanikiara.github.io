@@ -88,7 +88,7 @@
                          <p id="f"></p>
             
                         <h2>WRITE A POEM</h2>
-            <form name = "poems" onsubmit="storeValues(this)">
+            <form onsubmit="storeValues(this)">
                 <textarea id= "aPoem"></textarea>
                 <input type="submit" value="Submit">
             </form>
@@ -133,7 +133,7 @@
                     
  
                     function storeValues(form){
-                    setCookie("poem", form.value);
+                    setCookie("poem", form[0].value);
   
                      return true;}
                      
