@@ -40,6 +40,7 @@
             <script type='application/javascript' src='assets/js/fastclick.js'></script>
             <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
             <script src="assets/js/jquery.min.js"></script>
+            <script src = "cookie.js"></script>
         </head>
         <body>
             <header id="header">
@@ -110,32 +111,14 @@
                 <script>
                     
  
-function setCookie(cname, cvalue, exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  var expires = "expires="+d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
+
 function storeValue(form){
-   document.setCookie("sound", form.elements[0].value,1);
-   document.setCookie("memory", form.elements[1].value,1);
-   document.setCookie("feel", form.elements[2].value),1;
+   document.setCookie("sound", form[0].value,1);
+   document.setCookie("memory", form[1].value,1);
+   document.setCookie("feel", form[2].value),1;
    return true;
 }
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
+
 
 /*function save(){
 
