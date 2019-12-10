@@ -70,15 +70,27 @@ Btn.onclick = function() {
             document.getElementById("m").innerHTML = "Reminders: " + getCookie("memory");
             document.getElementById("f").innerHTML = "Feeling: " + getCookie("feel");
             </script>
-            <p id="s"></p>
-            <p id="m"></p>
-            <p id="f"></p>
-            <p>WRITE A POEM</p>
+            
+            <!-- Banner -->
+            <section id="banner">
+                <article>
+                    <div class="inner">
+                       <div class="main-title">
+                          <!--   How closely <span id="highlight">are you listening</span> to the world around you?</span>
+                        </div><button onClick="parent.location='map.html'">Listen</button><div id="about-text">
+                            <p class="about-text">Promenade is a new way to experience how others experience and interpret sound. People often go through their days hearing sounds, but not actively listening.</p>
+                            <p class="about-text">Take a moment to listen and reflect on how sounds affect your life in the present.</p>
+                        -->
+                         <p id="s"></p>
+                         <p id="m"></p>
+                         <p id="f"></p>
+            
+                        <p>WRITE A POEM</p>
             <form onsubmit="storeValues(this)">
                 <textarea></textarea>
                 <input type="submit" value="Submit">
             </form>
-                  <!--  <form onsubmit="storeValues(this)">
+                   <!-- <form onsubmit="storeValues(this)">
                         What sound stands out to you?<br>
                         <input type="text" name="sound"><br>
                         What does the sound remind you of?<br>
@@ -86,18 +98,9 @@ Btn.onclick = function() {
                         How does the sound make you feel?<br>
                         <input type="text" name="feel"><br>
                         <input type="submit" value="Submit">
-                    </form>-->
-            <!-- Banner -->
-            <section id="banner">
-                <article>
-                    <div class="inner">
-                        <!--<div class="main-title">
-                            How closely <span id="highlight">are you listening</span> to the world around you?</span>
-                        </div><button onClick="parent.location='map.html'">Listen</button><div id="about-text">
-                            <p class="about-text">Promenade is a new way to experience how others experience and interpret sound. People often go through their days hearing sounds, but not actively listening.</p>
-                            <p class="about-text">Take a moment to listen and reflect on how sounds affect your life in the present.</p>
+                    </form> -->
+                        </div>
                         
-                        </div>-->
                         <button onClick="parent.location='speak.html'">Speak</button>
                         
                         

@@ -60,24 +60,21 @@ Btn.onclick = function() {
                 </nav>
             </header>
     
-            <!-- Banner 
+            <!-- Banner -->
             <section id="banner">
                 <article>
                     <div class="inner">
                         <div class="main-title">
-                            How closely <span id="highlight">are you listening</span> to the world around you?</span>
+                       <!-- How closely <span id="highlight">are you listening</span> to the world around you?</span>
                         </div>
                         <button onClick="parent.location='speak.html'">Speak</button>
                         <button onClick="parent.location='map.html'">Listen</button>
                         <div id="about-text">
                             <p class="about-text">Promenade is a new way to experience how others experience and interpret sound. People often go through their days hearing sounds, but not actively listening.</p>
-                            <p class="about-text">Take a moment to listen and reflect on how sounds affect your life in the present.</p>
-                        
-                        </div>
-                    </div>
-                </article>
-            </section>-->
-         
+                            <p class="about-text">Take a moment to listen and reflect on how sounds affect your life in the present.</p>-->
+                         <div id="recording-instruction">
+                    Please <span id="highlight">answer the following questions</span> to begin writing your poem. Observe the space around you and answer some questions.
+                  </div>
                     <form onsubmit="storeValue(this)">
                         What sound stands out to you?<br>
                         <input type="text" name="sound"><br>
@@ -88,6 +85,11 @@ Btn.onclick = function() {
                         <input type="submit" value="Submit">
                     </form>
                     <button onClick="parent.location='write.html'">Write</button>
+                        </div>
+                    </div>
+                </article>
+            </section>-->
+           
             <!-- Footer -->
             <footer id="footer">
                 all content © 2019 <a href="https://www.tulanikiara.tumblr.com/">Tulani Kiara</a>

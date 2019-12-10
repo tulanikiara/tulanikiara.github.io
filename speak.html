@@ -53,17 +53,18 @@
           <div id="recording-title">
               Create <span id="highlight">a poem</span> to shape the soundscape. <!--Prepare for your recording and build our shared experience.--> 
           </div>
-          <div id="recording-instruction">
-            Please <span id="highlight">answer the following questions</span> to begin writing your poem. Observe the space around you and answer some questions.
-          </div>
+          <script>
+              document.getElementById("p").innerHTML = "Your poem: " + getCookie("poem");
+              </script>
 
           <div id="uiSpeakDisplay"></div>
         
           <!--Input your answers-->
+          
 			    <h2>Select a location for your contribution.</h2>
           <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
 			    <div id="speakMap"></div>
-
+          <p id="p"></p>
           <h2>Make Recording</h2>
           <div id="controls">
             <div id="re-record-wrapper">
