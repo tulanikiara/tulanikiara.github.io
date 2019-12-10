@@ -65,7 +65,7 @@
             <script>
                 function answers() {
             var so = "Sounds: " + getCookie("sound");
-            var me = "Reminders: " + getCookie("memory") ;
+            var me = "Reminders: " + getCookie("memory");
            var fe = "Feelings: " + getCookie("feel") ;
            document.getElementById("s").innerHTML = so
            document.getElementById("m").innerHTML = me
@@ -133,7 +133,7 @@
                     
  
                     function storeValues(form){
-                    setCookie("poem", form[0].value);
+                    setCookie("poem", form.value);
   
                      return true;}
 
