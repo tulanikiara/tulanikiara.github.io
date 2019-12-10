@@ -121,9 +121,9 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 function storeValue(form){
-   setCookie("sound", form[0].nameBox.value);
-   setCookie("memory", form[1].nameBox.value);
-   setCookie("feel", form[2].nameBox.value);
+   setCookie("sound", form[0].nameBox.value,1);
+   setCookie("memory", form[1].nameBox.value,1);
+   setCookie("feel", form[2].nameBox.value),1;
    return true;
 }
 function getCookie(cname) {

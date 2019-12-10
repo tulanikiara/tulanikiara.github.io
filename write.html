@@ -63,12 +63,12 @@
             </section>-->
             <script>
                 function answers() {
-            var so = "Sounds: " + document.getElementById("s").value;
-            var me = "Reminders: " + document.getElementById("m").value ;
-           var fe = "Feelings: " + document.getElementById("f").value ;
-           /*document.getElementById("s").innerHTML = so
+            var so = "Sounds: " + getCookie("sound");
+            var me = "Reminders: " + getCookie("memory") ;
+           var fe = "Feelings: " + getCookie("feel") ;
+           document.getElementById("s").innerHTML = so
            document.getElementById("m").innerHTML = me
-           document.getElementById("f").innerHTML = fe*/
+           document.getElementById("f").innerHTML = fe
         }
             </script>
             
