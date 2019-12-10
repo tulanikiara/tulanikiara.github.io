@@ -55,7 +55,8 @@
               Create <span id="highlight">a poem</span> to shape the soundscape. <!--Prepare for your recording and build our shared experience.--> 
           </div>
           <script>
-              document.getElementById("p").innerHTML = "Your poem: " + getCookie("poem");
+          var po = "Your poem: " + getCookie("poem");
+              document.getElementById("p").innerHTML = po 
               </script>
 
           <div id="uiSpeakDisplay"></div>
