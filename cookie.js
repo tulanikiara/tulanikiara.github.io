@@ -20,3 +20,12 @@ function getCookie(cname) {
   }
   return "";
 }
+function getString(dataForm){
+ 
+    var dataFormElements = dataForm.elements; // Reference to the form elements array.
+    var textareaIndex = 0;  // The form array index for the textarea element--MIGHT NOT BE 0
+    var textareaString = "";
+    
+    textareaString = textareaString + dataFormElements[textareaIndex].value;
+   
+    } // End of function getString 
