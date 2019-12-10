@@ -63,9 +63,9 @@
             </section>-->
             <script>
                 function answers() {
-            var so = "Sounds: " + document.getElementById("s").innerHTML.value;
-            var me = "Reminders: " + document.getElementById("m").innerHTML.value ;
-           var fe = "Feelings: " + document.getElementById("f").innerHTML.value ;
+            var so = "Sounds: " + document.getElementById("s").value;
+            var me = "Reminders: " + document.getElementById("m").value ;
+           var fe = "Feelings: " + document.getElementById("f").value ;
            /*document.getElementById("s").innerHTML = so
            document.getElementById("m").innerHTML = me
            document.getElementById("f").innerHTML = fe*/
@@ -131,7 +131,7 @@
                 <script>
                     
  
-/***function setCookie(cname, cvalue, exdays) {
+function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   var expires = "expires="+d.toUTCString();
@@ -155,7 +155,7 @@ function getCookie(cname) {
     }
   }
   return "";
-}*/
+
 
                 </script>
     

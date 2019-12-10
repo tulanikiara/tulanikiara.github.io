@@ -75,7 +75,7 @@ Btn.onclick = function() {
                          <div id="recording-instruction">
                     Please <span id="highlight">answer the following questions</span> to begin writing your poem. Observe the space around you and answer some questions.
                   </div>
-                    <form onsubmit=save()>
+                    <form onsubmit=storValue(this)>
                         What sound stands out to you?<br>
                         <input type="text" id = "s" name="sound"><br>
                         What does the sound remind you of?<br>
@@ -114,7 +114,7 @@ Btn.onclick = function() {
                 <script>
                     
  
-/***function setCookie(cname, cvalue, exdays) {
+function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   var expires = "expires="+d.toUTCString();
@@ -139,14 +139,14 @@ function getCookie(cname) {
     }
   }
   return "";
-}*/
+}
 
 function save(){
 
-var sou = document.getElementById('s').value;
+/*setCookie("s")
    var mem = document.getElementById('m').value;
    var feel = document.getElementById('f').value;
-}
+}*/
                 </script>
     
         </body>
