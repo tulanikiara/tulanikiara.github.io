@@ -72,14 +72,14 @@
                          <div id="recording-instruction">
                     Please <span id="highlight">answer the following questions</span> to begin writing your poem. Observe the space around you and answer some questions.
                   </div>
-                    <form onsubmit=storeValue(this)>
+                    <form onsubmit="storeValues(this);location.href='speak.html'">
                         What sound stands out to you?<br>
                         <input type="text" id = "s" name="sound"><br>
                         What does the sound remind you of?<br>
                         <input type="text" id = "m" name="memory"><br>
                         How does the sound make you feel?<br>
                         <input type="text" id = "f" name="feel"><br>
-                        <input type="submit" onclick="parent.location='write.html'" value="Submit">
+                        <input type="submit" value="Submit">
                     </form>
                     <!--<button onClick="parent.location='write.html'">Write</button>-->
                         </div>
