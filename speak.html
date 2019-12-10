@@ -46,7 +46,16 @@
         </ul>
       </nav>
     </header>
-
+    <script>
+        function answers() {
+    var so = "Sounds: " + getCookie("sound");
+    var me = "Reminders: " + getCookie("memory");
+   var fe = "Feelings: " + getCookie("feel") ;
+   document.getElementById("s").innerHTML = so
+   document.getElementById("m").innerHTML = me
+   document.getElementById("f").innerHTML = fe
+}
+    </script>
     <!-- Banner -->
 	<section onload=poem() id="banner">
 		<article class="visible top">
@@ -63,7 +72,10 @@
           <div id="uiSpeakDisplay"></div>
        
           <!--Input your answers-->
-            
+          <h2>WRITE A POEM</h2>
+          <form>
+              <textarea id= "Poem"></textarea>
+          </form>
 			    <h2>Select a location for your contribution.</h2>
           <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
 			    <div id="speakMap"></div>
