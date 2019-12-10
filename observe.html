@@ -1,0 +1,146 @@
+<!--Input your answers-->
+
+Btn.onclick = function() {
+    let name = document.querySelector('#someName').value;
+    document.cookie = name;
+
+    <!DOCTYPE HTML>
+    <!--
+        Slate by Pixelarity
+        pixelarity.com @pixelarity
+        License: pixelarity.com/license
+        Edited for Demo by Tulani Reeves-Miller
+    -->
+    
+    <html>
+        <head> <!--Not sure what to change this to? will it change with server?-->
+        <script>window['ga-disable-UA-148476341-1'] = !window.location.href.includes('https://tulanikiara.github.io/');</script>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148476341-1"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+    
+            gtag('config', 'UA-148476341-1');
+            </script>
+    
+            <title>Promenade - About</title>
+            <meta property="og:url"           content="https://https://tulanikiara.github.io//about.html" >
+            <meta property="og:type"          content="website" >
+            <meta property="og:title"         content="Promenade" >
+            <meta property="og:description"   content="Take a moment for poetic reflection." >
+            <meta property="og:image"         content="https://tulanikiara.github.io//images/title-logo.png" >
+            <meta property="fb:app_id"        content="" >
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <script src="https://use.typekit.net/xxd2frq.js"></script>
+            <script>try{Typekit.load({ async: true });}catch(e){}</script>
+            <link rel="stylesheet" href="assets/css/main.css" />
+            <link rel="stylesheet" href="assets/css/promenade.css" />
+            <link rel="stylesheet" href="assets/css/about.css" />
+            <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+            <link rel="icon" type="image/ico" href="images/p-favicon.png"/>
+            <script type='application/javascript' src='assets/js/fastclick.js'></script>
+            <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+            <script src="assets/js/jquery.min.js"></script>
+        </head>
+        <body>
+            <header id="header">
+                <div id="header-left">
+                    <a id="header-logo" href="index.html"><img src="images/header-logo.png" style="width: inherit;"></a>
+                    <div class="logo-subtitle">A poetic exploration of <span id="highlight"> soundscapes</span> </div>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li class="selected"><a href="index.html">About</a></li>
+                        <li><a href="speak.html">Share a Poem</a></li>
+                        <li><a href="map.html">Listen to Others</a></li>
+                    </ul>
+                </nav>
+            </header>
+    
+            <!-- Banner 
+            <section id="banner">
+                <article>
+                    <div class="inner">
+                        <div class="main-title">
+                            How closely <span id="highlight">are you listening</span> to the world around you?</span>
+                        </div>
+                        <button onClick="parent.location='speak.html'">Speak</button>
+                        <button onClick="parent.location='map.html'">Listen</button>
+                        <div id="about-text">
+                            <p class="about-text">Promenade is a new way to experience how others experience and interpret sound. People often go through their days hearing sounds, but not actively listening.</p>
+                            <p class="about-text">Take a moment to listen and reflect on how sounds affect your life in the present.</p>
+                        
+                        </div>
+                    </div>
+                </article>
+            </section>-->
+         
+                    <form onsubmit="storeValue(this)">
+                        What sound stands out to you?<br>
+                        <input type="text" name="sound"><br>
+                        What does the sound remind you of?<br>
+                        <input type="text" name="memory"><br>
+                        How does the sound make you feel?<br>
+                        <input type="text" name="feel"><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                    <button onClick="parent.location='write.html'">Write</button>
+            <!-- Footer -->
+            <footer id="footer">
+                all content © 2019 <a href="https://www.tulanikiara.tumblr.com/">Tulani Kiara</a>
+    
+                <a href="mailto:tulanikiara@gmail.com"><img id="mail-icon" align="right" src="/images/mail_icon.svg"></a>
+    
+               
+            </footer>
+    
+            <!-- Scripts -->
+           
+                <script src="assets/js/jquery.dropotron.min.js"></script>
+                <script src="assets/js/jquery.scrollex.min.js"></script>
+                <script src="assets/js/skel.min.js"></script>
+                <script src="assets/js/util.js"></script>
+                <script src="assets/js/main.js"></script>
+                <script>
+                    $(function() {
+                        FastClick.attach(document.body);
+                    });
+                </script>
+                <script>
+                    
+ 
+/***function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}*/
+function storeValue(form){
+   setCookie("sound", form[0].nameBox.value);
+   setCookie("memory", form[1].nameBox.value);
+   setCookie("feel", form[2].nameBox.value);
+   return true;
+}
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+                </script>
+    
+        </body>
+    </html>
+    
