@@ -48,16 +48,17 @@
     </header>
 
     <!-- Banner -->
-	<section id="banner">
+	<section onload=poem() id="banner">
 		<article class="visible top">
 		    <div class="inner">
           <div id="recording-title">
               Create <span id="highlight">a poem</span> to shape the soundscape. <!--Prepare for your recording and build our shared experience.--> 
           </div>
           <script>
+            function poem() {
           var po = "Your poem: " + getCookie("poem");
-              document.getElementById("p")= po;
-              </script>
+              document.getElementById("p").innerHTML = po;
+            }</script>
 
           <div id="uiSpeakDisplay"></div>
         <p id="p"></p>
