@@ -133,8 +133,8 @@
                     
  
                     function storeValues(form){
-                        var text = form[0].value;
-                        /*text = text.replace(/\r?\n?|\n/g,"<br>");*/
+                        var text = form.value;
+                        text = text.replace(/\r?\n?|\n/g,"<br>");
                     setCookie("poem", text);
   
                      return true;}
