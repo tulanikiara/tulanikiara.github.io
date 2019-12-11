@@ -141,7 +141,7 @@ function initRecording() {
           .alert(warningMessage);
           return;
     }
-    var termsMessage = "By uploading your recording, you agree that any recordings that you make with this app will become a part of A Father's Lullaby and any associated projects. Additionally, you authorize your recording to be used by Rashin Fahandej and Halsey Burgund for this project and any related purposes.";
+    var termsMessage = "By uploading your recording, you agree that any recordings that you make with this app will become a part of Promenade. Additionally, you authorize your recording to be used by Tulani and Halsey Burgund for this project and any related purposes.";
     var confirmationMessage = "<i class='far fa-check-circle fa-3x' style='color: green;'></i><br>" + "Your recording was submitted. Thank you!";
 
     alertify
