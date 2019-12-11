@@ -30,7 +30,7 @@
     <script src = "cookie.js"></script>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
   </head>
-  <body onload=answers()>
+  <body onload=poem()>
 
   	<!-- Header -->
     <header id="header">
@@ -68,9 +68,9 @@
           var po = "Your poem: " + getCookie("poem");
               document.getElementById("p").innerHTML = po;
             }</script>
-          <p id="p"></p>
+          
           <div id="uiSpeakDisplay"></div>
-        
+          <h3 id="p"></h3>
           <!-- <h3 id="s"></h3>
           <h3 id="m"></h3>
           <h3 id="f"></h3> -->
