@@ -460,7 +460,7 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {
 	font-size: .8em;
 }
 input[type="checkbox"]:checked + label:before, input[type="radio"]:checked + label:before {
-    background-color: #9e6d9b;
+    background-color: #b87cb4;
     border-color: #dbbfd9;
     color: #754a70;
 	line-height: 1.1em;
