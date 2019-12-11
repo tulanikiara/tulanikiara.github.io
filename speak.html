@@ -63,11 +63,6 @@
           <div id="recording-title">
               Recite <span id="highlight">your poem</span> to shape the soundscape. <!--Prepare for your recording and build our shared experience.--> 
           </div>
-          <script>
-            function poem() {
-          var po = getCookie("poem");
-              document.getElementById("p").innerHTML = po;
-            }</script>
           
           <div id="uiSpeakDisplay"></div>
           <p>Your poem:</p>
@@ -113,7 +108,7 @@
 	</section>
     <script>
             function poem() {
-          var po = "Your poem:\n" + getCookie("poem");
+          var po = "Your poem:<br>" + getCookie("poem");
               document.getElementById("p").innerHTML = po;
             }</script>
     <script type="text/javascript" src="/web-speak/modernizr-custom.js"></script>
