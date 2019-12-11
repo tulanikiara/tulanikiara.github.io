@@ -134,6 +134,7 @@
  
                     function storeValues(form){
                         var text = form.value;
+                        console.log(form.value)
                         text = text.replace(/\r?\n?|\n/g,"<br>");
                     setCookie("poem", text);
   
