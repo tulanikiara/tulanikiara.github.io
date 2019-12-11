@@ -86,8 +86,8 @@
                          <p id="s"></p>
                          <p id="m"></p>
                          <p id="f"></p>
-            
-                        <h2>WRITE A POEM</h2>
+                        <h2>Write a poem based of a topic of your choice and the sound you described</h2>
+        
             <form onsubmit="storeValues(this)">
                 <textarea id= "aPoem"></textarea>
                 <input type="submit" value="Submit">
@@ -133,7 +133,9 @@
                     
  
                     function storeValues(form){
-                    setCookie("poem", form[0].value);
+                        var text = forms[0].txt.value;
+                        text = text.replace(/\r?\n?|\n/g,"<br>");
+                    setCookie("poem", text);
   
                      return true;}
                      
