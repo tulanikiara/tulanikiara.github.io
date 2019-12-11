@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 	align-items: center;
     text-align: right;
     width: 100%;
-    background: #9e6d9b;
+    background: #b87cb4;
 	right: 0;
 	margin: 0px 18px 0px 0px;
 }
@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #header nav li.selected a {
     color: #754a70;
-    border-bottom: 3px solid #754a70;
+    border-bottom: 3px solid #b87cb4;
     padding-bottom: 5px;
 }
 #header nav li.selected {
