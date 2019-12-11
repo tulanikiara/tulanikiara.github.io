@@ -35,7 +35,7 @@ RoundWare.Recorder = function() {
     var authorization = 'Token 7da50488030ecdf43020d611687e2390c5f4e542';
     var url = 'https://prod.roundware.com/api/2/';
     var config = {
-        project_id : 25,
+        project_id : 29,
         session_id : 1,
         client_system : navigator.userAgent,
     }
