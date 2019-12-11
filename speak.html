@@ -65,12 +65,13 @@
           </div>
           <script>
             function poem() {
-          var po = "Your poem<br>" + getCookie("poem");
+          var po = getCookie("poem");
               document.getElementById("p").innerHTML = po;
             }</script>
           
           <div id="uiSpeakDisplay"></div>
-          <h3 id="p"></h3>
+          <p>Your poem:</p>
+          <p id="p"></p>
           <!-- <h3 id="s"></h3>
           <h3 id="m"></h3>
           <h3 id="f"></h3> -->
