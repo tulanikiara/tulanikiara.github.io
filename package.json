@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/thoughtworksarts/web-lullaby#readme",
   "dependencies": {
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.2"
   },
   "devDependencies": {
     "http-proxy": "^1.17.0"
